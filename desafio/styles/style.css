@@ -1,0 +1,163 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: rgb(91, 91, 91);
+}
+
+.welcome {
+  text-align: center;
+  margin-top: 5%;
+  color: rgb(234, 230, 230);
+}
+
+input[class = text]{
+  margin-left: 30%;
+}
+
+.about {
+   margin: 10px;
+  margin-top: 7%;
+  text-align: Left;
+  color: rgb(234, 230, 230);
+  margin-bottom: 3%;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+ p {
+  margin: 10px;
+  margin-bottom: 7%;
+  
+  text-align: center;
+  color: rgb(234, 230, 230);
+}
+main{
+  margin: 0;
+  padding: 0;
+  grid-template-columns: 15fr 15fr; 
+  gap: 0%; 
+  padding: 1%;
+  display: inline-grid;
+}
+
+.main{
+  margin: 1px;
+  margin-bottom: 1%;
+  display: flex;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: rgb(234, 230, 230);
+}
+
+.div{
+  background-color: whitesmoke;
+  border-radius: 1%;
+  padding: 5%;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0%;
+  color : black;
+  
+}
+
+.container{
+  background-color: whitesmoke;
+  border-radius: 1%;
+  padding: 10%;
+  color : black;
+  justify-content: space-between;
+  display: grid;
+  margin: 2% 1% auto 1%;
+
+}
+footer p {
+  margin: 0;
+  color: white;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+form{
+    margin-bottom: 15%;
+}
+
+.formcard{
+    background-color: whitesmoke;
+    width: 40%;
+    height: 20%;
+    padding: 2%;
+    margin-left: 30%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border-radius: 5%;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.button{
+    background-color: rgb(56, 56, 56);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 20%;
+}
+
+.text{
+  
+    border: black;
+    display: flex;
+   align-items: center;
+   text-align: center;
+   padding: 10px;
+}
+
+label{
+    font-size: 30px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #fafcfc;
+  display: flex;
+  align-items: center;
+}
+
+ul li {
+  float: left;
+}
+
+ul li a {
+  display: block;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration:none;
+}
+
+ul li a:hover {
+  background-color: rgb(198, 180, 180);
+  
+}
+
+.img {
+  width: 15%;
+  height: 15%;
+  
+  
+}
+
+.imgP{
+    width: 60%;
+    height: 60%;
+    margin-top: 5%;
+    margin-left: 20%;
+}
+footer {
+    text-align: center;
+    margin-top: 15%;
+    margin-bottom: 0%;
+    padding: 1%;
+    background-color: rgb(56, 56, 56);
+}
