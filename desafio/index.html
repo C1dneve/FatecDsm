@@ -4,25 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
 
-<nav>
-    <ul>
-        <li><img src="images/neva.png" alt="Neva" class="img"></li>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="contatos.html">Contact</a></li>
-        <li><a href="quemsomos.html">Quem Somos</a></li>
-     </ul>
-</nav>
+
+
+<nav class="navbar navbar-expand-lg bg-body-tertiary" >
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img src="images/neva.png" alt="Neva" class="img-fluid " style="max-height: 100px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="contatos.html">Contato</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="quemsomos.html">Quem Somos</a>
+                </li>
+            </ul>
+            
+            </div>
+        </div>
+    </nav>
 <section>
     <div>
-        <img src="images/uny.png" alt="university" class="imgP">
+        <img src="images/uny.png" alt="university" class="img-fluid d-block mx-auto">
     </div>
-    <h2 class="welcome">Welcome to Neva University</h2>
+    <h2 class="text-center text-light mt-5 pb-3">Welcome to Neva University</h2>
     <main class="main">
-        <div class="div">No ecossistema de desenvolvimento, a implementação de parâmetros sintáticos converge para a 
+        <div class="container my-10 bg-light lead card shadow-sm p-4">No ecossistema de desenvolvimento, a implementação de parâmetros sintáticos converge para a 
         otimização de fluxos de trabalho escaláveis, onde a arquitetura de sistemas modulares se alinha 
         com a renderização de componentes reativos em tempo real. A persistência de dados em camadas de 
         abstração permite que a latência seja mitigada, enquanto o design responsivo se adapta a grids 
@@ -49,7 +68,9 @@
 <footer>
     <p>&copy;  2026 My Website. All rights reserved to Neva University(Boss Cid Neves).</p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>   
 </body>
 </html>
 
 
+    
