@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% block title %}Home – Neva University{% endblock %}
+
+{% block content %}
+<section style="padding-bottom: 40px;">
+    <div>
+        <img src="{{ url_for('static', filename='images/uny.png') }}" alt="university" class="img-fluid d-block mx-auto w-100" style="max-height: 340px; object-fit: cover;">
+    </div>
+    <h2 class="text-center text-light mt-5 pb-3">Welcome to Neva University</h2>
+    <div class="container" style="max-width: 860px;">
+        <div class="bg-light card shadow-sm p-4 lead" style="color: #222;">
+            No ecossistema de desenvolvimento, a implementação de parâmetros sintáticos converge para a
+            otimização de fluxos de trabalho escaláveis, onde a arquitetura de sistemas modulares se alinha
+            com a renderização de componentes reativos em tempo real. A persistência de dados em camadas de
+            abstração permite que a latência seja mitigada, enquanto o design responsivo se adapta a grids
+            complexos e layouts fluídos.
+            <br><br>
+            A experiência do usuário é elevada quando a tipografia mantém uma hierarquia clara,
+            utilizando unidades relativas como rem e em para assegurar a acessibilidade em dispositivos
+            diversos. O contraste de cores, a densidade de pixels e o anti-aliasing de fontes contribuem para
+            uma leitura menos cansativa, mesmo em blocos extensos de informação.
+        </div>
+        <div class="text-center mt-4">
+            {% if not current_user.is_authenticated %}
+            <a href="{{ url_for('main.cadastro') }}" class="button me-3">Cadastre-se</a>
+            <a href="{{ url_for('main.login') }}" class="button" style="background:#888;">Login</a>
+            {% else %}
+            <a href="{{ url_for('main.courses') }}" class="button">Ver Cursos</a>
+            {% endif %}
+        </div>
+    </div>
+</section>
+{% endblock %}

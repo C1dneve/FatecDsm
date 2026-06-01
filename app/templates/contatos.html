@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}Contato – Neva University{% endblock %}
+
+{% block content %}
+<section class="contact-section">
+    <div class="contact-card">
+        <h2>Contate-nos</h2>
+
+        <form method="POST" action="{{ url_for('main.contato') }}">
+            <div class="mb-3">
+                <label for="name" class="form-label">Nome *</label>
+                <input type="text" class="form-control" id="name" name="name" required>
+            </div>
+            <div class="mb-3">
+                <label for="titulo" class="form-label">Título</label>
+                <input type="text" class="form-control" id="titulo" name="titulo">
+            </div>
+            <div class="mb-3">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" class="form-control" id="telefone" name="telefone">
+            </div>
+            <div class="mb-3">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" class="form-control" id="email" name="email">
+            </div>
+            <div class="mb-3">
+                <label for="message" class="form-label">Mensagem</label>
+                <textarea class="form-control" id="message" name="message" rows="4"></textarea>
+            </div>
+            <button type="submit" class="btn-send">Enviar</button>
+        </form>
+    </div>
+</section>
+{% endblock %}

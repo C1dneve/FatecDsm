@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Cursos – Neva University{% endblock %}
+
+{% block content %}
+<section style="padding-bottom: 60px;">
+    <h2 class="text-center text-light mt-5 mb-4">Cursos</h2>
+    <div class="courses-wrapper">
+        {% for course in courses %}
+        <div class="card shadow-sm mb-4 bg-light">
+            <div class="card-body p-4">
+                <h4 class="fw-bold" style="color:#111;">{{ course.name }}</h4>
+                <p style="color:#555; margin-bottom: 16px;">{{ course.description }}</p>
+
+                <div class="d-flex gap-2 align-items-center flex-wrap">
+                    {% if course.id in enrolled_ids %}
+                        <a href="{{ url_for('main.module_view', course_id=course.id) }}" class="button">
+                            Acessar Módulos
+                        </a>
+                        <span style="color: #198754; font-weight: 600;">✓ Matriculado</span>
+                    {% else %}
+                        <a href="{{ url_for('main.module_view', course_id=course.id) }}" class="btn btn-outline-dark btn-sm">
+                            Ver Detalhes
+                        </a>
+                        <form method="POST" action="{{ url_for('main.enroll', course_id=course.id) }}" style="margin:0;">
+                            <button type="submit" class="button">Matricular-se</button>
+                        </form>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+        {% else %}
+        <div class="alert alert-info text-center">Nenhum curso disponível no momento.</div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

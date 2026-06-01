@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+{% block title %}Mensagem Recebida – Neva University{% endblock %}
+
+{% block content %}
+<section style="padding-bottom: 40px;">
+    <div style="max-width: 600px; margin: 60px auto; text-align: center;">
+        <div class="bg-light card shadow-sm p-5">
+            <h2 style="color: #222; font-weight: 700;">✓ Mensagem Recebida!</h2>
+            <p style="color: #444; font-size: 1.05rem; margin-top: 16px;">
+                Obrigado por entrar em contato com a Neva University.<br>
+                Falaremos com você em breve por sua mensagem!
+            </p>
+            <a href="{{ url_for('main.index') }}" class="button d-inline-block mt-3">Voltar ao Início</a>
+        </div>
+        <img src="{{ url_for('static', filename='images/uny.png') }}" alt="university"
+             class="img-fluid d-block mx-auto mt-4 w-100" style="max-height: 260px; object-fit: cover; border-radius: 8px;">
+    </div>
+</section>
+{% endblock %}

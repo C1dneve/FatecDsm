@@ -1,0 +1,125 @@
+{% extends 'base.html' %}
+{% block title %}{{ course.name }} – Módulos{% endblock %}
+
+{% block extra_css %}
+<style>
+.module-sidebar {
+    background-color: #f8f9fa;
+    border-right: 2px solid #dee2e6;
+    min-height: 500px;
+    padding: 0;
+}
+.module-header {
+    background-color: #383838;
+    color: white;
+    font-weight: bold;
+    padding: 10px 14px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.lesson-item {
+    display: block;
+    padding: 8px 14px;
+    font-size: 0.85rem;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #e9ecef;
+    transition: background 0.15s;
+}
+.lesson-item:hover {
+    background-color: #e2e6ea;
+    color: #000;
+}
+.lesson-item.active {
+    background-color: #383838;
+    color: white;
+}
+.module-group {
+    margin-bottom: 4px;
+}
+.module-name-label {
+    background-color: #555;
+    color: #fff;
+    font-size: 0.78rem;
+    padding: 6px 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    cursor: pointer;
+}
+.module-name-label[data-bs-toggle] {
+    user-select: none;
+}
+.content-area {
+    padding: 2rem;
+    min-height: 500px;
+}
+.course-title-bar {
+    background: #383838;
+    color: white;
+    padding: 12px 20px;
+    font-weight: bold;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+</style>
+{% endblock %}
+
+{% block content %}
+<section class="mb-5">
+    <div class="course-title-bar">
+        {{ course.name }}
+    </div>
+
+    <div class="container-fluid">
+        <div class="row g-0">
+            <!-- SIDEBAR -->
+            <div class="col-12 col-md-3 module-sidebar">
+                {% for module in modules %}
+                <div class="module-group">
+                    <div class="module-name-label" data-bs-toggle="collapse"
+                         data-bs-target="#mod-{{ module.id }}" aria-expanded="true">
+                        {{ module.name }}
+                        <span>▾</span>
+                    </div>
+                    <div class="collapse show" id="mod-{{ module.id }}">
+                        {% for lesson in module.lessons | sort(attribute='order') %}
+                        <a href="{{ url_for('main.module_view', course_id=course.id, lesson_id=lesson.id) }}"
+                           class="lesson-item {% if selected_lesson and selected_lesson.id == lesson.id %}active{% endif %}">
+                            {{ lesson.title }}
+                        </a>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- CONTENT -->
+            <div class="col-12 col-md-9 content-area bg-white">
+                {% if selected_lesson %}
+                    <h4 class="fw-bold mb-1">{{ selected_lesson.title }}</h4>
+                    {% if selected_module %}
+                    <p class="text-muted small mb-3">{{ course.name }} › {{ selected_module.name }}</p>
+                    {% endif %}
+                    <hr>
+                    <p class="lead">{{ selected_lesson.content }}</p>
+                    {% if selected_lesson.pdf_url %}
+                    <a href="{{ selected_lesson.pdf_url }}" class="button d-inline-block mt-3" target="_blank">
+                        📄 PDF da Aula
+                    </a>
+                    {% endif %}
+                {% else %}
+                    <p class="text-muted">Selecione uma aula no menu lateral.</p>
+                {% endif %}
+
+                <div class="mt-5">
+                    <a href="{{ url_for('main.courses') }}" class="btn btn-outline-dark btn-sm">← Voltar aos Cursos</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
